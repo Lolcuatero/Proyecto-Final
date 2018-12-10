@@ -15,7 +15,7 @@ class CreatePropuestasTable extends Migration
     {
         Schema::create('propuestas', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('propuesta');
+            $table->text('propuesta');
             $table->integer('proyecto_id');
             $table->integer('proyectos_id');
             $table->integer('user_id');

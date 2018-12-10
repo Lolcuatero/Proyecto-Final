@@ -74,9 +74,11 @@
                   </strong></p>
               </div>
               <div class="task-board m-0">
-                <a href="" class="btn btn-warning btn-mini b-none"><i class="icofont icofont-eye-alt m-0"></i> Editar Proyecto</a>
-                <a href="invoice.html" class="btn btn-danger btn-mini b-none"><i class="icofont icofont-eye-alt m-0"></i> Borrar Proyecto</a>
-                
+                <form action="/Proyectos/{{$proyecto->id}}" method="POST">
+                  {{csrf_field()}}
+                  {{method_field('DELETE')}}
+                  <button type="submit" class="btn btn-danger btn-mini b-none"><i class="icofont icofont-eye-alt m-0"></i> Borrar Proyecto</button>
+                 </form>
                 <!-- end of dropdown-secondary -->
                 <!-- end of seconadary -->
               </div>

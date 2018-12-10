@@ -24,7 +24,7 @@ class HomeController extends Controller
      *
      * Procedimiento que lleva a la vista inicio relacionada con la plantilla
      */
-    public function index()
+    public function index(){
     
         //Se obtienen todos los usuarios y se envian los datos obtenidos a la vista inicio
         $usuarios = User::all();
@@ -33,8 +33,9 @@ class HomeController extends Controller
     
   public function Muro()
   {
+    $idUsuario= auth()->user()->id;
     //Se obtienen todos los poryectos en estado de espera
-    $proyectos = Proyectos::all()->where('estado','En espera');
+    $proyectos = Proyectos::all()->where('estado','En espera')->where('user_id','<>',$idUsuario);
      return view('muro',["proyectos"=>$proyectos]);
   }
   

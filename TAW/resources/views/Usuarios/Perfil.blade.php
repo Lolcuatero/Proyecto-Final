@@ -234,12 +234,12 @@
                       <li class="media">
                         <div class="media-left">
                           <a href="#">
-                              <img class="media-object img-radius comment-img" src="{{Storage::url(App\User::find(App\Evaluaciones::find($vals->user_id)->user_id)->foto)}}" alt="Generic placeholder image">
+                              <img class="media-object img-radius comment-img" src="{{Storage::url(App\User::find($vals->user_id)->foto) }}" alt="Generic placeholder image">
                           </a>
                         </div>
                         
                         <div class="media-body">
-                          <h6 class="media-heading">{{App\User::find(App\Evaluaciones::find($vals->user_id)->user_id)->name}}</h6>
+                          <h6 class="media-heading">{{App\User::find($vals->user_id)->name }}</h6>
                           <div class="stars-example-css review-star">
                             <label for="">Puntacion:</label>
                           <?php for ($i = 1; $i <= $vals->puntuacion; $i++) {?>
